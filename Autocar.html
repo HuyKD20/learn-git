@@ -6,6 +6,10 @@ h1 {
 margin-top: -66px;
 margin-left:252px;
   }
+h2 {
+margin-top: -15px;
+text-align: center;
+}
 body {
   background-color: #FFFFFF;
   font-family: Arial, Helvetica, sans-serif;
@@ -25,7 +29,7 @@ body {
 }
 .qwert {
   width: 1440px;
-  height: 120px;
+  height: 109px;
   background: #D9D9D9;
   padding:0;
   position: static;
@@ -34,12 +38,13 @@ body {
 .qwer{
   width: 1440px;
   height: 62px;
-  background: #000000; 
+  background: #000000;
+  margin-top: 100px;
   }
 .cotdoc{
   width: 212px;
   height: 854px;
-  margin-top: -385px;
+  margin-top: -365px;
   background-color: #817F7F;
   border: 3px;
   }
@@ -49,19 +54,25 @@ body {
   border-radius: 10px;
   background: #ffffff;
   border-style: outset;
-  margin-top: -281px;
+  margin-top:  -282px;
   margin-left: 565px; 
   padding: 30px;
 }
 .chunhat2{
-  width:  1205px;
-  height: 274px;
+  width:  1100px;
+  height: 300px;
   border-radius: 10px;
   background: #ffffff;
   border-style: outset;
   margin-top: -450px;
-  margin-left: 235px; 
+  margin-left: 235px;   
   padding: 30px;
+}
+.looter{
+  width:auto;
+  height: 49px;
+  background-color: #000000;
+  margin-top: 60px;  
 }
 </style>
 
@@ -108,7 +119,7 @@ new Chart("Danh Thu", {
   ];
   
   new Chart("myChart", {
-    type: "doughnut",
+    type: "pie",
     data: {
       labels: xValues,
       datasets: [{
@@ -127,6 +138,34 @@ new Chart("Danh Thu", {
 </div>
 </div>
 <div class="cotdoc"></div>
-<div class="chunhat2"></div>
+<div class="chunhat2">
+  <h2>So sanh 2021 va 2022</h2>
+  <canvas id="chunhat2" style="width:100%;max-width:550px"></canvas>
+
+  <script>
+  var xValues = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov", "Dec"];
+  
+  new Chart("chunhat2", {
+    type: "line",
+    data: {
+      labels: xValues,
+      datasets: [{ 
+        data: [18,10,7,14,6,20],
+        borderColor: "red",
+        fill: false
+  
+      }, { 
+        data: [15,17,10,11,9,12,9,18,15,15,19,17],
+        borderColor: "blue",
+        fill: false
+      }]
+    },
+    options: {
+      legend: {display: false}
+    }
+  });
+  </script>
+</div>
+<div class="looter"></div>
 </body>
 </html>
